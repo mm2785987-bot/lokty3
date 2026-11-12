@@ -1,0 +1,286 @@
+/* ==========================================
+   1. الإعدادات العامة والمتغيرات الأساسية
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fff0f5, #ffe0eb, #fff7f9);
+    color: #442633;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   2. الهيدر والواجهة الرئيسية (Hero Section)
+   ========================================== */
+header {
+    padding: 25px 8%;
+}
+
+header h2 {
+    color: #d85b83;
+    font-size: 25px;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.hero p:first-child {
+    color: #c45b7b;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 6vw, 65px);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #dc648c;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #896675;
+    margin-bottom: 30px;
+}
+
+button {
+    background: #d85b83;
+    color: white;
+    border: none;
+    padding: 16px 35px;
+    border-radius: 40px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 8px 25px rgba(216, 91, 131, 0.25);
+}
+
+button:hover {
+    transform: translateY(-5px);
+    background: #b9436b;
+    box-shadow: 0 12px 30px rgba(216, 91, 131, 0.38);
+}
+
+/* ==========================================
+   3. قسم الرسالة الرومانسية
+   ========================================== */
+.next-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background: #fff0f5;
+}
+
+.message-card {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 50px 35px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(216, 91, 131, 0.12);
+}
+
+.big-heart {
+    font-size: 75px;
+    color: #d85b83;
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.15); }
+}
+
+.message-card h2 {
+    color: #d85b83;
+    margin: 20px;
+    font-size: 30px;
+}
+
+.message-card p {
+    line-height: 2.2;
+    color: #896675;
+    font-size: 18px;
+}
+
+.message-card span {
+    display: block;
+    margin-top: 25px;
+    color: #d85b83;
+    font-weight: bold;
+}
+
+/* ==========================================
+   4. معرض الذكريات والتحكم بالصور والكلام
+   ========================================== */
+.memories-section {
+    padding: 80px 20px;
+    background-color: #fff0f3;
+    text-align: center;
+}
+
+.memories-section h2 {
+    color: #880e4f;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.memories-section p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.trigger-card {
+    cursor: pointer;
+    background: transparent !important;
+    border: 2px dashed #ff4d6d !important;
+    box-shadow: none !important;
+    transition: all 0.4s ease;
+    padding: 20px;
+    border-radius: 25px;
+    opacity: 1 !important;
+}
+
+.trigger-card:hover {
+    transform: scale(1.02);
+    background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.trigger-card .memory-text {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+.memory-card {
+    background: transparent;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 15px;
+}
+
+.memory-img {
+    width: auto;
+    max-width: 220px;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+    border: 3px solid #ff4d6d;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.2);
+    background-color: rgba(255,255,255,0.4);
+    flex-shrink: 0;
+    display: block;
+}
+
+.memory-text {
+    flex: 1;
+    text-align: right;
+    padding: 10px;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.memory-card.show-text .memory-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.hidden-memories {
+    display: none;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.hidden-memories.show {
+    display: flex;
+}
+
+.memory-card-animated {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.memory-card-animated.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media (max-width: 600px) {
+    .memory-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .memory-text {
+        text-align: center;
+    }
+    .memory-img {
+        max-width: 100%;
+        max-height: 280px;
+    }
+}
+
+/* ==========================================
+   5. القلوب المتحركة (حجم أصغر، بطيئة، عايمة في الهوا، وتملى الشاشة)
+   ========================================== */
+.floating-heart {
+    position: fixed;
+    bottom: -50px;
+    color: #ff4d6d;
+    opacity: 0.65;
+    pointer-events: none;
+    z-index: 9999;
+    /* حركة عوم بطيئة وناعمة لفوق مع دوران خفيف */
+    animation: floatUpSlow linear forwards;
+}
+
+@keyframes floatUpSlow {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-110vh) translateX(30px) rotate(360deg);
+        opacity: 0;
+    }
+}

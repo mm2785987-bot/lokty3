@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إلى لوكتي ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h2>♡ حكايتنا</h2>
+</header>
+
+<main>
+    <!-- قسم الـ Hero Section (الواجهة الرئيسية) -->
+    <section class="hero">
+        <p>رسالة صغيرة إلى لوكتي</p>
+
+        <h1>
+            يا لوكتي، وجودك
+            <span>بيخلّي الدنيا ألطف</span>
+        </h1>
+
+        <p>عملتلك حاجة مخصوص عشانك ❤️</p>
+
+        <button id="startBtn">
+            ابدئي الحكاية ♡
+        </button>
+    </section>
+
+    <!-- قسم الرسالة -->
+    <section class="next-section" id="message">
+        <div class="message-card">
+            <div class="big-heart">♡</div>
+
+            <h2>عارفة يا لوكتي؟</h2>
+
+            <p>
+                إنتِ من الناس اللي وجودها بيفرق،
+                وتفاصيلها الصغيرة بتفضل في البال.
+                وعايزك تعرفي إنك مميزة عندي جدًا.
+            </p>
+
+            <span>مع كل الحب ❤️</span>
+        </div>
+    </section>
+
+    <!-- معرض الصور والذكريات -->
+    <section class="memories-section">
+        <h2>أجمل ذكرياتنا ♡</h2>
+        <p>اضغطي على الصورة أدناه عشان تتفتح وتشوفی باقي الحكاية...</p>
+
+        <div class="gallery-container">
+
+            <!-- الصورة الأولى (الزرار الأساسي لفتح القائمة) -->
+            <div class="memory-card trigger-card" id="revealTriggerBtn">
+                <img src="love.jpg" alt="ذكرى 1" class="memory-img">
+                <div class="memory-text">
+                    <h3>أم لارين الغالية ❤️ (اضغطي هنا يا قموصه)</h3>
+                    <p>بحبك ي نور عيني وبحبك لما بمسك ايدك اليوم دا واحساسي وقتها أنا مش عارف أنساه.</p>
+                </div>
+            </div>
+
+            <!-- باقي الصور (تظهر بالتدريج واحدة ورا التانية أوتوماتيكياً كل 3 ثواني) -->
+            <div class="hidden-memories" id="hiddenMemoriesBox">
+
+                <!-- الصورة الثانية -->
+                <div class="memory-card memory-card-animated">
+                    <img src="3.png.jpeg" alt="ذكرى 2" class="memory-img">
+                    <div class="memory-text">
+                        <h3>Mlwkty ✨</h3>
+                        <p>I Love youu so much 🤍.</p>
+                    </div>
+                </div>
+
+                <!-- الصورة الثالثة -->
+                <div class="memory-card memory-card-animated">
+                    <img src="5.png.jpeg" alt="ذكرى 3" class="memory-img">
+                    <div class="memory-text">
+                        <h3>اسم البشمهندس محلي الصوره ✨</h3>
+                        <p>كل لحظة بيننا بتفضل محفورة في القلب ي ام لارين كفايه نكد عليا وحياة ابوكي.</p>
+                    </div>
+                </div>
+
+                <!-- الصورة الرابعة -->
+                <div class="memory-card memory-card-animated">
+                    <img src="10.png.jpeg" alt="ذكرى 4" class="memory-img">
+                    <div class="memory-text">
+                        <h3>ملكة اي مكان ✨</h3>
+                        <p>احلي من كدا لسه ملقوش.</p>
+                    </div>
+                </div>
+
+                <!-- الصورة الخامسة (تأكد من تعديل اسم الصورة لو حابب تخليه مختلف) -->
+                <div class="memory-card memory-card-animated">
+                    <img src="8.png.jpeg" alt="ذكرى 5" class="memory-img">
+                    <div class="memory-text">
+                        <h3>The best part of my day ✨</h3>
+                        <p>يومي ميمشيش من غيرك من غير مكالمتك وصوتك ي نور عيني .</p>
+                    </div>
+                </div>
+                <!-- الصورة الخامسة (تأكد من تعديل اسم الصورة لو حابب تخليه مختلف) -->
+                <div class="memory-card memory-card-animated">
+                    <img src="7.png.jpeg" alt="ذكرى 5" class="memory-img">
+                    <div class="memory-text">
+                        <h3>The most beautiful feeling is being with you, my love. ✨</h3>
+                        <p>وقال ايه عايزه تعمليلي بلوك ي روح امك  .</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<!-- الموسيقى في الخلفية -->
+<audio id="bgMusic" src="music/romantic_music.mp3" loop></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
